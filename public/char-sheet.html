@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Feuille de personnage (éditable)</title>
+    <link rel="stylesheet" href="/char-sheet.css" />
+  </head>
+  <body>
+    <main class="sheet-root">
+      <h1>Feuille de personnage — version éditable</h1>
+
+      <div class="sheet" id="sheet">
+        <!-- SVG background -->
+        <img src="/src/assets/dnd_blankcharactersheet_fr.svg" alt="Feuille DnD" class="sheet-bg" />
+
+        <!-- Overlay form fields (absolutely positioned) -->
+        <form id="characterForm" class="overlay">
+          <!-- Basic info -->
+          <input name="character_name" class="field name" placeholder="Nom du personnage" />
+          <input name="class_level" class="field classlevel" placeholder="Classe / Niveau" />
+          <input name="race" class="field race" placeholder="Race" />
+          <input name="background" class="field background" placeholder="Background" />
+          <input name="player_name" class="field player" placeholder="Nom du joueur" />
+          <input name="alignment" class="field alignment" placeholder="Alignement" />
+          <input name="xp" class="field xp" placeholder="Expérience" />
+
+          <!-- Stats -->
+          <div class="stats">
+            <label>FOR <input name="str" size="3" class="stat" /></label>
+            <label>DEX <input name="dex" size="3" class="stat" /></label>
+            <label>CON <input name="con" size="3" class="stat" /></label>
+            <label>INT <input name="int" size="3" class="stat" /></label>
+            <label>SAG <input name="wis" size="3" class="stat" /></label>
+            <label>CHA <input name="cha" size="3" class="stat" /></label>
+          </div>
+
+          <!-- Combat / resources -->
+          <input name="hp_current" class="field hp_current" placeholder="PV actuels" />
+          <input name="hp_max" class="field hp_max" placeholder="PV max" />
+          <input name="ac" class="field ac" placeholder="Classe d'armure" />
+          <input name="initiative" class="field init" placeholder="Initiative" />
+          <input name="speed" class="field speed" placeholder="Vitesse" />
+
+          <!-- Notes / equipment / spells -->
+          <textarea name="equipment" class="field equipment" placeholder="Équipement"></textarea>
+          <textarea name="features" class="field features" placeholder="Traits, capacités, sorts"></textarea>
+
+          <div class="buttons">
+            <button type="button" id="saveBtn">Sauvegarder (JSON)</button>
+            <button type="button" id="loadBtn">Charger (JSON)</button>
+            <button type="button" id="printBtn">Imprimer</button>
+          </div>
+        </form>
+      </div>
+
+      <p class="note">Astuce: vous pouvez imprimer cette page ou sauvegarder/charger les données JSON.</p>
+    </main>
+    <script src="/char-sheet.js"></script>
+  </body>
+  </html>
