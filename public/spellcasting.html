@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Spellcasting — editable</title>
+    <link rel="stylesheet" href="/spellcasting.css" />
+  </head>
+  <body>
+    <main class="sheet-root">
+      <h1>Spellcasting — éditeur</h1>
+
+      <div class="controls">
+        <label>Charger un SVG : <input type="file" id="svgFile" accept="image/svg+xml" /></label>
+        <button id="toggleLayout">Mode positionnement</button>
+        <button id="saveLayout">Exporter layout</button>
+        <button id="loadLayout">Importer layout</button>
+        <button id="saveData">Exporter données</button>
+        <button id="loadData">Importer données</button>
+        <button id="printBtn">Imprimer</button>
+      </div>
+
+      <div class="sheet" id="sheet">
+        <img id="sheetBg" class="sheet-bg" alt="Spellcasting sheet" />
+
+        <form id="overlay" class="overlay">
+          <!-- Example fields; user can move them in layout mode -->
+          <input name="caster_name" class="field caster_name" placeholder="Nom du lanceur" />
+          <input name="class_level" class="field classlevel" placeholder="Classe / Niveau" />
+          <input name="spellcasting_ability" class="field ability" placeholder="Carac. de lancement" />
+
+          <textarea name="spell_notes" class="field spell_notes" placeholder="Sorts préparés / notes"></textarea>
+
+          <div class="buttons">
+            <button type="button" id="saveBtn">Sauvegarder (JSON)</button>
+            <button type="button" id="loadBtn">Charger (JSON)</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="/spellcasting.js"></script>
+  </body>
+  </html>
